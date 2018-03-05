@@ -1,0 +1,112 @@
+" vundle
+set nocompatible              " be iMproved, required
+filetype off                  " required
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+" The bundles you install will be listed here
+Bundle 'bling/vim-airline'
+Bundle 'Raimondi/delimitMate'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'ntpeters/vim-better-whitespace'
+Bundle 'kshenoy/vim-signature'
+Bundle 'kien/ctrlp.vim'
+Bundle 'xolox/vim-misc'
+Bundle 'WolfgangMehner/lua-support'
+Bundle 'dkprice/vim-easygrep'
+Bundle 'majutsushi/tagbar'
+Bundle 'tpope/vim-fugitive'
+Bundle 'junegunn/gv.vim'
+Bundle 'scrooloose/nerdtree'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+
+
+filetype plugin indent on    " required
+"""""""""""""""" above lines must be at the top """"""""""""""""'
+
+" General Settings
+set nu                  " display line number
+set bs=2                " allow backspacing over everything in insert mode
+set history=100         " keep 100 lines of command line history
+set ruler               " show the cursor position all the time
+set autoread            " auto read when file is changed from outside
+syntax enable           " syntax highlight
+filetype on             " Enable filetype detection
+filetype indent on      " Enable filetype-specific indenting
+filetype plugin on      " Enable filetype-specific plugins
+set hlsearch            " search highlighting
+set cursorline          " highlight current line
+set cursorcolumn
+
+highlight CursorLine guibg=#003853 ctermbg=24  gui=none cterm=none
+
+set expandtab           "replace <TAB> with spaces
+set ts=4
+set softtabstop=4
+set shiftwidth=4
+set showmatch           " Cursor shows matching ) and }
+set showmode            " Show current mode
+set wildchar=<TAB>      " start wild expansion in the command line using <TAB>
+set wildmenu            " wild char completion menu
+set wildignore=*.o,*.class,*.pyc   " ignore these files while expanding wild chars
+
+set autoindent          " auto indentation
+set incsearch           " incremental search
+set nobackup            " no *~ backup files
+set noswapfile
+set copyindent          " copy the previous indentation on autoindenting
+set ignorecase          " ignore case when searching
+set smartcase           " ignore case if search pattern is all lowercase,case-sensitive otherwise
+set smarttab            " insert tabs on the start of a line according to context
+set nowrap              " no wrap line
+set noerrorbells        " disable sound on errors
+set visualbell
+set tm=500
+
+set laststatus=2
+set statusline=\ %{HasPaste()}%<%-15.25(%f%)%m%r%h\ %w\ \
+set statusline+=\ \ \ [%{&ff}/%Y]
+set statusline+=\ \ \ %<%20.30(%{hostname()}:%{CurDir()}%)\
+set statusline+=%=%-10.(%l,%c%V%)\ %p%%/%L
+
+set encoding=utf-8
+set termencoding=utf-8
+set fileencoding=utf-8
+set fileencodings=ucs-bom,utf-8,big5,gb2312,latin1
+
+" Airline Theme
+let g:airline_theme ='dark'
+
+" rebind map
+let mapleader = ";"
+
+noremap <silent> K :<C-U>ObviousResizeUp<CR>
+noremap <silent> J :<C-U>ObviousResizeDown<CR>
+noremap <silent> H :<C-U>ObviousResizeLeft<CR>
+noremap <silent> L :<C-U>ObviousResizeRight<CR>
+
+noremap <silent> <C-k> <C-w>k
+noremap <silent> <C-j> <C-w>j
+noremap <silent> <C-h> <C-w>h
+noremap <silent> <C-l> <C-w>l
+
+nmap <F2> :TagbarToggle<CR>
+" 启动时自动focus
+let g:tagbar_autofocus = 1
+
+" nerdtree ==>
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+map <C-n> :NERDTreeToggle<CR>
+
+" <== nerdtree
+
+
