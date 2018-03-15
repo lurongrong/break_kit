@@ -1,7 +1,7 @@
 if [[ `uname` == 'Linux' ]]; then
 
     yum -y update
-    yum -y install git vim python-pip golang ansibel expect ctags tmux lrzsz
+    yum -y install git vim golang ansible expect ctags tmux lrzsz
 
     if [[ ! -d /home/golang ]];then
         mkdir -p /home/golang
@@ -60,6 +60,10 @@ elif [[`uname` == 'Darwin' ]]; then
     sudo wget https://raw.github.com/mmastrac/iterm2-zmodem/master/iterm2-recv-zmodem.sh
     sudo chmod 777 /usr/local/bin/iterm2-*
 fi
+
+echo "download get-pip.py"
+wget -q https://bootstrap.pypa.io/get-pip.py -O /tmp/get-pip.py
+python /tmp/get-pip.py
 
 if [[ ! -d ~/.pip ]];then
     mkdir -p ~/.pip
