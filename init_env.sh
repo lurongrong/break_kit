@@ -1,6 +1,5 @@
 if [[ `uname` == 'Linux' ]]; then
 
-    yum -y update
     yum -y install git vim golang ansible expect ctags tmux lrzsz
 
     if [[ ! -d /home/golang ]];then
@@ -101,5 +100,6 @@ if [[ ! -d ~/.vim/bundle/vundle.vim ]];then
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     echo "please edit .vimrc and execute :PluginInstall"
 fi
-
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 echo "++++++++++++++config finished+++++++++++++++++"

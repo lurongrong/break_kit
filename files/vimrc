@@ -42,6 +42,12 @@ set hlsearch            " search highlighting
 set cursorline          " highlight current line
 set cursorcolumn
 
+" vimdiff color config
+hi DiffAdd    ctermbg=235  ctermfg=108  guibg=#262626 guifg=#87af87 cterm=reverse gui=reverse
+hi DiffChange ctermbg=235  ctermfg=103  guibg=#262626 guifg=#8787af cterm=reverse gui=reverse
+hi DiffDelete ctermbg=235  ctermfg=131  guibg=#262626 guifg=#af5f5f cterm=reverse gui=reverse
+hi DiffText   ctermbg=235  ctermfg=208  guibg=#262626 guifg=#ff8700 cterm=reverse gui=reverse
+
 highlight CursorLine guibg=#003853 ctermbg=24  gui=none cterm=none
 
 set expandtab           "replace <TAB> with spaces

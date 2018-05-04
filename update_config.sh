@@ -9,8 +9,8 @@ cp -rf ~/.zshrc            files/zshrc
 cp -rf ~/.tmux.conf        files/tmux.conf
 echo "===========backup done=============="
 
-#git fetch
-#git add *
-#git add *.*
-#git commit -am "update $(date +%Y%m%d%H%M)"
-#git push origin master
+git fetch
+git add *
+git add *.*
+git commit -am "update $(date +%Y%m%d%H%M)"
+git push origin master

@@ -5,25 +5,56 @@
 
 export ZSH=/Users/breakwang/.oh-my-zsh
 export EDITOR=vim
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
-
+# jumpserver
 alias j='ssh wangxianbao@172.18.1.95'
+alias xj='ssh wangxianbao@172.18.12.60'
 alias aj='ssh root@47.104.0.162'
 
+# cvm
+alias cvm='ssh root@192.144.140.39'
+
+#my vm-server
 alias v1='ssh root@172.18.2.25'
 alias v2='ssh root@172.18.2.26'
 alias v3='ssh root@172.18.2.36'
+alias va='ssh root@172.18.2.27'
+alias cva='ssh root@172.18.2.32'
+alias vd1='ssh root@172.18.2.39'
+alias vd2='ssh root@172.18.2.40'
+alias vd3='ssh root@172.18.2.41'
 
+#liurong && lurongrong
+alias lr='ssh root@172.18.2.27'
+alias lrr='ssh root@172.18.2.37'
+alias cc30='ssh root@172.18.2.30'
+alias cc34='ssh root@172.18.2.34'
+
+#office idc phy server (used as vm)
 alias p1='ssh root@172.18.2.21'
 alias p2='ssh root@172.18.2.22'
 
+#prod
 alias ed='ssh root@115.238.170.248'
 alias 3copy='ssh root@115.238.170.166'
 alias 2copy='ssh root@115.231.180.165'
 alias edge='ssh root@115.238.170.173'
 alias log='ssh root@115.238.170.172'
 alias seattle='ssh root@63.237.232.165'
+alias de="ssh root@183.136.205.28"
+# command shortcut key
+alias sp='cat .ssh/id_rsa.pub | pbcopy'
+alias 11='echo celeritas | pbcopy'
+
+alias tn="tmux new -s break"
+alias ta="tmux a -t break"
+alias py="python"
+alias s2-init="cd /Users/breakwang/baishan_code/s2-init"
+alias s2="cd /Users/breakwang/baishan_code/s2"
+
+alias zsh="vim .zshrc"
+alias szsh="source .zshrc"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -72,7 +103,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git autojump osx node npm)
 
 source $ZSH/oh-my-zsh.sh
 
